@@ -1,0 +1,64 @@
+:root {
+    --sand: #F5F0E8;
+    --ink: #1C1C1C;
+    --muted: #7A7269;
+    --accent: #C4622D;
+    --accent2: #2D6B8F;
+    --soft: #EDE8DF;
+    --white: #FDFAF6;
+    --border: rgba(28, 28, 28, 0.1);
+    --success: #3B6D11;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--sand);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+}
+
+.side {
+    background-color: var(--ink);
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    padding: 30px 0;
+    top: 0;
+    height: 100vh;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 22px;
+    padding: 0 24px 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    letter-spacing: -0.3px;
+}
+
+.nav {
+    padding: 20px 0;
+    flex-grow: 1;
+}
+
+.nav a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 14px;
+    font-weight: 400;
+    border-left: 2px solid transparent;
+}
