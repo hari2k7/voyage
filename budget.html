@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleb.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="logo">Voyage<span>.</span></div>
+        <nav class="nav">
+            <a href="index.html"><span class="nav-icon">◉</span><span>Dashboard</span></a>
+            <a href="budget.html" class="active"><span class="nav-icon">◈</span><span>Budget</span></a>
+            <a href="itinerary.html"><span class="nav-icon">☰</span><span>Itinerary</span></a>
+            <a href="packing.html"><span class="nav-icon">◻</span><span>Packing List</span></a>
+            <a href="places.html"><span class="nav-icon">⊕</span><span>Saved Places</span></a>
+            <a href="settings.html"><span class="nav-icon">⊙</span><span>Settings</span></a>
+        </nav>
+    </aside>
+
+    <div class="main">
+        <div class="topbar">
+            <div>
+                <div class="page-title">Budget Tracker</div>
+                <!--<div class="page-sub"></div>-->
+            </div>
+            <button id="reset-btn" class="btn">Reset All</button>
+        </div>
+
+        <div class="budget-hero">
+            <div>
+                <div class="budget-lbl">Total Budget:</div>
+                <div class="btv">
+                    <div class="budget-total-val" id="amtDisp">$</div>
+                    <button id="edit-budget-btn" class="hidden btn">Edit</button>
+                    <input type="number" name="budget" id="btv" class="budget-total-val">
+                    <button id="upBudget" class="btn">OK</button>
+                </div>
+
+            </div>
+            <div>
+                <div class="budget-lbl">Spent</div>
+                <div class="budget-spent-val" id="spent-val">$0</div>
+                
+            </div>
+            <div>
+                <div class="budget-lbl">Remaining</div>
+                <div class="budget-rem-val" id="remaining-val">$</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">All Expenses</div>
+            <ul id="expense-list"></ul>
+        </div>
+
+        <div class="add-form">
+            <div class="card-title" style="margin-bottom:16px">Add New Expense</div>
+            <form id="expense-form">
+                <div class="form-row">
+                    <div class="form-group" style="flex:2">
+                        <label>Description</label>
+                        <input type="text" id="expense-name" placeholder="e.g. Flight tickets" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="expense-cat">
+                            <option value="Flights">Flights</option>
+                            <option value="Accommodation">Accommodation</option>
+                            <option value="Food">Food</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Activities">Activities</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Amount ($)</label>
+                        <input type="number" id="expense-amount" placeholder="0" min="0" required />
+                    </div>
+                    <button type="submit" class="btn">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="budget.js"></script>
+</body>
+
+</html>
