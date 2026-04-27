@@ -59,6 +59,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const expAmt = parseFloat(expenseAmountInput.value.trim());
         const expCat = expenseCatInput.value;
 
+        if (BUDGET === 0) {
+            alert('Please set a budget first before adding expenses.');
+            return;
+        }
+
+        // check if expense exceeds remaining balance
+        const currentTotal = calculateTotal();
+        const remaining = BUDGET - currentTotal;
+
+        if (expAmt > remaining) {
+            alert(`Not enough balance! You only have $${remaining.toFixed(2)} remaining.`);
+            return;
+        }
+
         if (expName !== '' && !isNaN(expAmt) && expAmt > 0) {
             const newExp = {
                 id: Date.now(),
