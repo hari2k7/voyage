@@ -1,0 +1,29 @@
+{
+  "name": "voyage",
+  "version": "1.0.0",
+  "description": "A travel planner",
+  "keywords": [
+    "HTML",
+    "CSS",
+    "Javascript"
+  ],
+  "homepage": "https://github.com/hari2k7/voyage#readme",
+  "bugs": {
+    "url": "https://github.com/hari2k7/voyage/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hari2k7/voyage.git"
+  },
+  "license": "ISC",
+  "author": "Hariharasudhan D",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "electron": "^41.3.0"
+  }
+}
