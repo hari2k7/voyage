@@ -4,9 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalOverlay = document.getElementById('modal-overlay');
     const tripForm = document.getElementById('trip-form');
     const tripDestInput = document.getElementById('trip-dest');
-    const tripDatesInput = document.getElementById('trip-dates');
     const tripStatusInput = document.getElementById('trip-status');
     const tripList = document.getElementById('trip-list');
+    const tripDateFromInput = document.getElementById('trip-date-from');
+    const tripDateToInput = document.getElementById('trip-date-to');
 
     let trips = JSON.parse(localStorage.getItem('voyage_trips')) || [];
 
@@ -25,17 +26,18 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
 
         const destin = tripDestInput.value.trim();
-        const dates = tripDatesInput.value.trim();
+        const dateFrom = tripDateFromInput.value;
+        const dateTo = tripDateToInput.value;
         const status = tripStatusInput.value;
 
-        if (destin === '' || dates === '') return;
+        if (destin === '' || dateFrom === '' || dateTo === '') return;
 
         const newTrip = {
             id: Date.now(),
             dest: destin,
-            dates: dates,
+            dates: dateFrom + ' → ' + dateTo,
             status: status
-        }
+        };
 
         trips.push(newTrip);
         saveTrips();
@@ -96,8 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
             trips = trips.filter(t => t.id !== id);
             saveTrips();
             renderList();
-            updateHero();
-            updateStats();
         }
     })
 
@@ -107,6 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < expenses.length; i++) {
         total += expenses[i].amount;
     }
-    document.getElementById('stat-budget').textContent = '$' + Math.round(total).toLocaleString();
+    document.getElementById('stat-budget').textContent = '₹' + Math.round(total).toLocaleString();
 
 })

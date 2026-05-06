@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (BUDGET > 0) {
         budgetBtn.classList.add('hidden');
         budgetInput.classList.add('hidden');
-        amtDisp.textContent = '$' + BUDGET;
+        amtDisp.textContent = '₹' + BUDGET;
         editBudgetBtn.classList.remove('hidden');
     }
 
@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             budgetBtn.classList.add("hidden");
             budgetInput.classList.add("hidden");
-            amtDisp.textContent = `$${BUDGET}`;
-            remVal.textContent = `$${BUDGET}`;
+            amtDisp.textContent = `₹${BUDGET}`;
+            remVal.textContent = `₹${BUDGET}`;
             editBudgetBtn.classList.remove('hidden');
             updateTotal();
         }
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const remaining = BUDGET - currentTotal;
 
         if (expAmt > remaining) {
-            alert(`Not enough balance! You only have $${remaining.toFixed(2)} remaining.`);
+            alert(`Not enough balance! You only have ₹${remaining.toFixed(2)} remaining.`);
             return;
         }
 
@@ -96,8 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const total = calculateTotal();
         const remaining = BUDGET - total;
 
-        document.getElementById("spent-val").textContent = '$' + Math.round(total).toLocaleString();
-        document.getElementById('remaining-val').textContent = '$' + Math.max(Math.round(remaining), 0).toLocaleString();
+        document.getElementById("spent-val").textContent = '₹' + Math.round(total).toLocaleString();
+        document.getElementById('remaining-val').textContent = '₹' + Math.max(Math.round(remaining), 0).toLocaleString();
     }
 
     function calculateTotal() {
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
             <div class="exp-right">
-                <div class="exp-amount">$${expense.amount.toFixed(2)}</div>
+                <div class="exp-amount">₹${expense.amount.toFixed(2)}</div>
                 <button class="delete-btn" data-id="${expense.id}">✕</button>
             </div>
             `;

@@ -203,3 +203,7 @@
     justify-content: flex-end;
     margin-top: 8px;
 }
+
+.stat-card{
+    grid-column: span 2;
+}

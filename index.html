@@ -1,115 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Voyage — Dashboard</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="style1.css"/>
+  <link rel="stylesheet" href="style1.css" />
   <link rel="icon" href="assets/logo.jpeg">
 </head>
+
 <body>
-<div class="layout">
-  <aside class="sidebar">
-    <div class="logo">Voyage<span>.</span></div>
-    <nav class="nav">
-      <a href="index.html" class="active"><span class="nav-icon">◉</span><span>Dashboard</span></a>
-      <a href="budget.html"><span class="nav-icon">◈</span><span>Budget</span></a>
-      <a href="itinerary.html"><span class="nav-icon">☰</span><span>Itinerary</span></a>
-      <a href="packing.html"><span class="nav-icon">◻</span><span>Packing List</span></a>
-      <a href="places.html"><span class="nav-icon">⊕</span><span>Saved Places</span></a>
-      <a href="settings.html"><span class="nav-icon">⊙</span><span>Settings</span></a>
-    </nav>
-  </aside>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo">Voyage</div>
+      <nav class="nav">
+        <a href="index.html" class="active"><span class="nav-icon">◉</span><span>Dashboard</span></a>
+        <a href="budget.html"><span class="nav-icon">◈</span><span>Budget</span></a>
+        <a href="itinerary.html"><span class="nav-icon">☰</span><span>Itinerary</span></a>
+        <a href="packing.html"><span class="nav-icon">◻</span><span>Packing List</span></a>
+        <a href="places.html"><span class="nav-icon">⊕</span><span>Saved Places</span></a>
+        <a href="settings.html"><span class="nav-icon">⊙</span><span>Settings</span></a>
+      </nav>
+    </aside>
 
-  <main class="main">
-    <div class="topbar">
-      <div>
-        <div class="page-title">My Trips</div>
-        <div class="page-sub" id="trip-sub">0 trips planned</div>
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <div class="page-title">My Trips</div>
+          <!--<div class="page-sub" id="trip-sub">0 trips planned</div>-->
+        </div>
+        <div class="topbar-actions">
+          <button class="btn" id="open-modal-btn">+ New Trip</button>
+        </div>
       </div>
-      <div class="topbar-actions">
-        <button class="btn" id="open-modal-btn">+ New Trip</button>
-      </div>
-    </div>
 
-    <div class="trip-hero">
-      <div class="trip-hero-label">Next Trip</div>
-      <div class="trip-hero-name" id="hero-name">No trips yet</div>
-      <div class="trip-hero-meta" id="hero-meta">Add your first trip using the button above</div>
-      <div class="trip-hero-tags" id="hero-tags"></div>
-    </div>
-
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-label">Total Trips</div>
-        <div class="stat-val" id="stat-total">0</div>
-        <div class="stat-unit">planned</div>
+      <div class="trip-hero">
+        <div class="trip-hero-label">Plan journeys, manage budgets, and organize your travel life beautifully.</div>
+        <div class="trip-hero-name" id="hero-name">Adventure Awaits</div>
+        <div class="trip-hero-meta" id="hero-meta">Add your first trip using the button above</div>
+        <div class="trip-hero-tags" id="hero-tags"></div>
       </div>
-      <div class="stat-card">
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Total Trips</div>
+          <div class="stat-val" id="stat-total">0</div>
+          <div class="stat-unit">planned</div>
+        </div>
+        <!--<div class="stat-card">
         <div class="stat-label">Packing Done</div>
         <div class="stat-val" id="stat-packing">—</div>
         <div class="stat-unit">items checked</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Budget Used</div>
-        <div class="stat-val" id="stat-budget">$0</div>
-        <div class="stat-unit">spent so far</div>
-      </div>
-      <div class="stat-card">
+      </div>-->
+        <div class="stat-card">
+          <div class="stat-label">Budget Used</div>
+          <div class="stat-val" id="stat-budget">₹0</div>
+          <div class="stat-unit">spent so far</div>
+        </div>
+        <!--<div class="stat-card">
         <div class="stat-label">Places Saved</div>
         <div class="stat-val" id="stat-places">0</div>
         <div class="stat-unit">restaurants & sites</div>
+      </div>-->
       </div>
-    </div>
 
-    <div class="two-col">
-      <div class="card">
-        <div class="card-title">Upcoming Events</div>
-        <!--
+      <div class="two-col">
+        <div class="card">
+          <div class="card-title">Upcoming Events</div>
+          <!--
         <div class="timeline-item"><div class="tl-dot"></div><div><div class="tl-day">Apr 12 · Day 1</div><div class="tl-title">Fly to Osaka (KIX)</div></div></div>
         <div class="timeline-item"><div class="tl-dot blue"></div><div><div class="tl-day">Apr 13 · Day 2</div><div class="tl-title">Arrive Kyoto, check in</div></div></div>
         <div class="timeline-item"><div class="tl-dot blue"></div><div><div class="tl-day">Apr 15 · Day 4</div><div class="tl-title">Fushimi Inari Shrine</div></div></div>
         <div class="timeline-item"><div class="tl-dot"></div><div><div class="tl-day">Apr 19 · Day 8</div><div class="tl-title">Shinkansen to Tokyo</div></div></div>
         -->
+        </div>
+        <div class="card">
+          <div class="card-title">All Trips</div>
+          <ul id="trip-list" style="list-style:none;padding:0;margin:0;"></ul>
+        </div>
       </div>
-      <div class="card">
-        <div class="card-title">All Trips</div>
-        <ul id="trip-list" style="list-style:none;padding:0;margin:0;"></ul>
-      </div>
-    </div>
-  </main>
-</div>
-
-<!-- MODAL -->
-<div class="modal-overlay" id="modal-overlay">
-  <div class="modal">
-    <h2>Add New Trip</h2>
-    <form id="trip-form">
-      <div class="form-group">
-        <label>Destination</label>
-        <input type="text" id="trip-dest" placeholder="e.g. Kyoto & Tokyo, Japan" required/>
-      </div>
-      <div class="form-group">
-        <label>Dates</label>
-        <input type="text" id="trip-dates" placeholder="e.g. Apr 12 – Apr 26" required/>
-      </div>
-      <div class="form-group">
-        <label>Status</label>
-        <select id="trip-status">
-          <option value="planned">Planned</option>
-          <option value="upcoming">Upcoming / Booked</option>
-          <option value="completed">Completed</option>
-        </select>
-      </div>
-      <div class="modal-actions">
-        <button type="button" class="btn-ghost" id="close-modal-btn">Cancel</button>
-        <button type="submit" class="btn">Save Trip</button>
-      </div>
-    </form>
+    </main>
   </div>
-</div>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <h2>Add New Trip</h2>
+      <form id="trip-form">
+        <div class="form-group">
+          <label>Destination</label>
+          <input type="text" id="trip-dest" placeholder="e.g. Kyoto & Tokyo, Japan" required />
+        </div>
+        <div class="form-group">
+          <label>Dates</label>
+          <div style="display:flex; gap:10px;">
+            <input type="date" id="trip-date-from" required />
+            <input type="date" id="trip-date-to" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Status</label>
+          <select id="trip-status">
+            <option value="planned">Planned</option>
+            <option value="upcoming">Upcoming / Booked</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-ghost" id="close-modal-btn">Cancel</button>
+          <button type="submit" class="btn">Save Trip</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <script src="index.js"></script>
 </body>
+
 </html>
