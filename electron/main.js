@@ -1,13 +1,14 @@
 const { app, BrowserWindow } = require('electron');
+const path = require('path');
 
 function createWindow() {
   const win = new BrowserWindow({
     width: 1440,
     height: 900,
-    icon: 'assets/logo.jpeg'
+    icon: path.join(__dirname, '../assets/logo.jpeg')
   });
 
-  win.loadFile('index.html');
+  win.loadFile(path.join(__dirname, '../index.html'));
 }
 
 app.whenReady().then(createWindow);

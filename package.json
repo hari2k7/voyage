@@ -18,7 +18,7 @@
   "license": "ISC",
   "author": "Hariharasudhan D",
   "type": "commonjs",
-  "main": "main.js",
+  "main": "electron/main.js",
   "scripts": {
     "start": "electron .",
     "build": "electron-builder",
