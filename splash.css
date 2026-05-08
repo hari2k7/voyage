@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap');
+
+#voyage-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--sand, #F5F0E8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+#voyage-splash.hidden {
+  display: none;
+}
+
+.splash-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  opacity: 0;
+  animation: splashFadeIn 0.2s ease forwards 0.05s;
+}
+
+.splash-line {
+  width: 0;
+  height: 2px;
+  background: var(--accent, #C4622D);
+  animation: splashLineGrow 0.35s cubic-bezier(0.77, 0, 0.18, 1) forwards 0.1s;
+}
+
+/* The page label text */
+.splash-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--muted, #7A7269);
+  opacity: 0;
+  transform: translateX(-4px);
+  animation: splashTextIn 0.3s ease forwards 0.28s;
+  white-space: nowrap;
+}
+
+/* The dot accent */
+.splash-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent, #C4622D);
+  opacity: 0;
+  flex-shrink: 0;
+  animation: splashDotIn 0.2s ease forwards 0.48s;
+}
+
+/* Cover exits — quick fade out upward */
+#voyage-splash.exiting {
+  animation: splashExit 0.25s ease forwards;
+}
+
+@keyframes splashFadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes splashLineGrow {
+  to { width: 40px; }
+}
+
+@keyframes splashTextIn {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes splashDotIn {
+  to { opacity: 1; }
+}
+
+@keyframes splashExit {
+  0%   { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-6px); }
+}
+
+/* Body freeze during splash */
+body.splash-active {
+  overflow: hidden;
+}

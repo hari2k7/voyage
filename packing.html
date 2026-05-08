@@ -6,21 +6,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylep.css">
     <link rel="icon" href="assets/logo.jpeg">
+    <link rel="stylesheet" href="splash.css">
 </head>
 
 <body>
-    <aside class="sidebar">
-        <div class="logo">Voyage</div>
-        <nav class="nav">
-            <a href="index.html"><span class="nav-icon">◉</span><span>Dashboard</span></a>
-            <a href="budget.html"><span class="nav-icon">◈</span><span>Budget</span></a>
-            <a href="itinerary.html"><span class="nav-icon">☰</span><span>Itinerary</span></a>
-            <a href="packing.html" class="active"><span class="nav-icon">◻</span><span>Packing List</span></a>
-            <a href="places.html"><span class="nav-icon">⊕</span><span>Saved Places</span></a>
-            <a href="settings.html"><span class="nav-icon">⊙</span><span>Settings</span></a>
-        </nav>
-    </aside>
+    <script src="splash.js"></script>
+
+    <div class="main">
+        <div class="topbar">
+            <div id="list1" style="display: flex; flex-direction: row ; gap: 1em;margin-bottom: 1em;">
+                <div class="page-title">Packing list </div>
+                <div class="page-sub" id="Packing_sub"></div>
+                <button class="btn" id="unchecking" onclick="uncheck()">Uncheck all </button>
+                <button class="btn" id="checking" onclick="check()">Check all </button>
+            </div>
+
+        </div>
+        <div class="packing-hero">
+            <div class="packing-hero" style="display: flex; gap: 1rem;">
+                <div style="flex: 1;">
+                    <div id="packed" class="packing-hero-name"></div>
+                    <div class="packing-hero-meta">PACKED</div>
+
+                </div>
+                <div style="flex: 1;">
+                    <div id="total" class="packing-hero-name"></div>
+                    <div class="packing-hero-meta">TOTAL</div>
+                </div>
+                <div style="flex: 1;" id="progress"></div>
+            </div>
+
+        </div>
+        <div class="two-col">
+            <!-- Clothing -->
+            <div class="card">
+                <div class="card-title">Clothing</div>
+                <form name="clothing">
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> T-Shirts </label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Pants / Trousers</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Jacket / Hoodie</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Socks</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Undergarments</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Sleepwear</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Shoes / Sandals</label></p>
+                </form>
+            </div>
+
+            <!-- Health & Toiletries -->
+            <div class="card">
+                <div class="card-title">Health & Toiletries</div>
+                <form name="health">
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Toothbrush & Toothpaste</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Shampoo & Conditioner</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Soap / Body Wash</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Deodorant</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Sunscreen</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Medicines / First Aid</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Towel</label></p>
+                </form>
+            </div>
+        </div>
+
+        <div class="two-col">
+            <!-- Tech & Gadgets -->
+            <div class="card">
+                <div class="card-title">Tech & Gadgets</div>
+                <form name="tech">
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Phone & Charger</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Power Bank</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Laptop & Charger</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Earphones / Headphones</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Universal Adapter</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Camera</label></p>
+                </form>
+            </div>
+
+            <!-- Documents & Essentials -->
+            <div class="card">
+                <div class="card-title">Documents & Essentials</div>
+                <form name="documents">
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Passport / ID</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Travel Tickets</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Hotel Booking Confirmation</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Travel Insurance</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Cash / Cards</label></p>
+                    <p><label><input type="checkbox" name="item" onclick="Adds(this)"> Emergency Contacts</label></p>
+                </form>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    <script src="packing.js"></script>
 </body>
 
 </html>

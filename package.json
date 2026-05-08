@@ -21,9 +21,19 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
+    "build": "electron-builder",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "electron": "^41.3.0"
+    "electron": "^41.3.0",
+    "electron-builder": "^26.8.1"
+  },
+  "build": {
+    "appId": "com.voyage.app",
+    "productName": "Voyage",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    }
   }
 }

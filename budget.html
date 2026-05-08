@@ -8,21 +8,11 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styleb.css">
     <link rel="icon" href="assets/logo.jpeg">
+    <link rel="stylesheet" href="splash.css">
 </head>
 
 <body>
-    <aside class="sidebar">
-        <div class="logo">Voyage</div>
-        <nav class="nav">
-            <a href="index.html"><span class="nav-icon">◉</span><span>Dashboard</span></a>
-            <a href="budget.html" class="active"><span class="nav-icon">◈</span><span>Budget</span></a>
-            <a href="itinerary.html"><span class="nav-icon">☰</span><span>Itinerary</span></a>
-            <a href="packing.html"><span class="nav-icon">◻</span><span>Packing List</span></a>
-            <a href="places.html"><span class="nav-icon">⊕</span><span>Saved Places</span></a>
-            <a href="settings.html"><span class="nav-icon">⊙</span><span>Settings</span></a>
-        </nav>
-    </aside>
-
+    <script src="splash.js"></script>
     <div class="main">
         <div class="topbar">
             <div>
@@ -37,7 +27,7 @@
                 <div class="budget-lbl">Total Budget:</div>
                 <div class="btv">
                     <div class="budget-total-val" id="amtDisp">₹</div>
-                    <button id="edit-budget-btn" class="hidden btn">Edit</button>
+                    <!--<button id="edit-budget-btn" class="hidden btn">Edit</button>-->
                     <input type="number" name="budget" id="btv" class="budget-total-val">
                     <button id="upBudget" class="btn">OK</button>
                 </div>

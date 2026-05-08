@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: block !important;
+            margin: 0 !important;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 220px;
+            min-width: 220px;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo">Voyage</div>
+        <nav class="nav">
+            <a href="dashboard.html" target="main" class="active">
+                <span class="nav-icon">◉</span><span>Dashboard</span>
+            </a>
+
+            <a href="Itinerary.html" target="main">
+                <span class="nav-icon">☰</span><span>Itinerary</span>
+            </a>
+
+            <a href="budget.html" target="main">
+                <span class="nav-icon">◈</span><span>Budget</span>
+            </a>
+
+            <a href="packing.html" target="main">
+                <span class="nav-icon">◻</span><span>Packing List</span>
+            </a>
+
+            <a href="places.html" target="main">
+                <span class="nav-icon">⊕</span><span>Saved Places</span>
+            </a>
+
+            <a href="settings.html" target="main">
+                <span class="nav-icon">⊙</span><span>Settings</span>
+            </a>
+        </nav>
+    </div>
+
+
+
+    <script>
+        const links = document.querySelectorAll(".nav a");
+
+        links.forEach(link => {
+            link.addEventListener("click", function () {
+
+                // remove active from all
+                links.forEach(l => l.classList.remove("active"));
+
+                // add active to clicked link
+                this.classList.add("active");
+            });
+        });
+    </script>
+</body>
+
+</html>

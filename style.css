@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap');
 
-/* ── CSS Variables ── */
 :root {
     --sand: #F5F0E8;
     --ink: #1C1C1C;
@@ -35,7 +34,6 @@ body {
     min-height: 100vh;
 }
 
-/* ── Sidebar ── */
 .sidebar {
     width: 220px;
     min-width: 220px;
@@ -43,7 +41,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 28px 0;
-    position: sticky;
+    
     top: 0;
     height: 100vh;
 }
@@ -278,18 +276,6 @@ body {
     animation: fadeIn 0.25s ease;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 hr {
     border: none;
     border-top: 1px solid var(--border);
@@ -306,23 +292,105 @@ hr {
     }
 }
 
-@media (max-width: 640px) {
-    .sidebar {
-        width: 60px;
-        min-width: 60px;
-    }
-
-    .logo,
-    .nav a span,
-    .sidebar-footer .avatar span {
-        display: none;
-    }
-
-    .main {
-        padding: 20px 16px;
-    }
-}
 
 .hidden{
     display: none;
 }
+
+
+
+body.dark-mode{
+    background:#172033 !important;
+    color:#f5f5f5 !important;
+}
+
+
+
+body.dark-mode .main{
+    background:#172033 !important;
+}
+
+
+
+body.dark-mode .card,
+body.dark-mode .trip-card,
+body.dark-mode .place-card,
+body.dark-mode .setting-card,
+body.dark-mode .itin-card,
+body.dark-mode .modal-box,
+body.dark-mode form{
+    background:#f4efe8 !important;
+    color:#111827 !important;
+}
+
+
+
+body.dark-mode .page-title,
+body.dark-mode .heading,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3{
+    color:#ffffff !important;
+}
+
+
+
+body.dark-mode .card h1,
+body.dark-mode .card h2,
+body.dark-mode .card h3,
+body.dark-mode .trip-card h1,
+body.dark-mode .trip-card h2,
+body.dark-mode .trip-card h3,
+body.dark-mode .place-card h1,
+body.dark-mode .place-card h2,
+body.dark-mode .place-card h3,
+body.dark-mode .itin-card h1,
+body.dark-mode .itin-card h2,
+body.dark-mode .itin-card h3{
+    color:#111827 !important;
+}
+
+
+body.dark-mode .page-sub,
+body.dark-mode .date_dest,
+body.dark-mode .itin-note,
+body.dark-mode .place-type{
+    color:#d1d5db !important;
+}
+
+
+
+body.dark-mode input,
+body.dark-mode select{
+    background:#0f172a !important;
+    color:white !important;
+    border:1px solid #334155 !important;
+}
+
+
+body.dark-mode input::placeholder{
+    color:#94a3b8 !important;
+}
+
+
+
+body.dark-mode .btn,
+body.dark-mode .addevent,
+body.dark-mode .export,
+body.dark-mode button{
+    background:#374151;
+    color:white;
+}
+
+
+
+body.dark-mode .sidebar{
+    background:#0f172a !important;
+}
+
+
+
+body.dark-mode a{
+    color:#93c5fd;
+}
+

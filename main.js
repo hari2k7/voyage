@@ -7,7 +7,7 @@ function createWindow() {
     icon: 'assets/logo.jpeg'
   });
 
-  win.loadFile('index.html'); // your UI file
+  win.loadFile('index.html');
 }
 
 app.whenReady().then(createWindow);

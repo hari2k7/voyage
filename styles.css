@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root{
+    --bg:#F3EEE7;
+    --card:#F8F5F1;
+    --dark:#161616;
+    --muted:#7D746A;
+    --accent:#C56A2D;
+    --border:#DDD6CE;
+    --white:#FFFFFF;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:var(--bg);
+    color:var(--dark);
+    font-family:'DM Sans', sans-serif;
+}
+
+.container,
+.main{
+    padding:42px 40px;
+}
+
+.container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+form{
+    width:460px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:22px;
+    padding:40px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.04);
+}
+
+form h1{
+    font-family:'Playfair Display', serif;
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+form label{
+    font-size:14px;
+    font-weight:500;
+    color:var(--muted);
+}
+
+form input{
+    width:100%;
+    margin-top:8px;
+    margin-bottom:18px;
+    padding:13px 14px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:white;
+    font-size:14px;
+}
+
+form input:focus{
+    outline:none;
+    border-color:var(--accent);
+}
+
+form input[type="submit"]{
+    background:var(--accent);
+    color:white;
+    font-weight:600;
+    border:none;
+    margin-top:10px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+form input[type="submit"]:hover{
+    opacity:0.9;
+}
+
+.error{
+    color:#c0392b;
+    font-size:13px;
+    margin-top:-12px;
+    margin-bottom:12px;
+}
+
+.head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+
+    margin-bottom:40px;
+}
+
+.heading{
+    font-family:'Playfair Display', serif;
+    font-size:52px;
+    font-weight:600;
+
+    margin-bottom:10px;
+}
+
+.date_dest{
+    color:var(--muted);
+    font-size:16px;
+}
+
+.head2{
+    display:flex;
+    gap:14px;
+}
+
+.export, .addevent{
+    padding:14px 22px;
+    border-radius:12px;
+    font-weight:600;
+    font-size:14px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.export{
+    background:transparent;
+    border:1px solid var(--border);
+}
+
+.export:hover{
+    background:#ece6df;
+}
+
+.addevent{
+    background:var(--dark);
+    color:white;
+    border:none;
+}
+
+.addevent:hover{
+    opacity:0.9;
+}
+
+.day-tabs{
+    display:flex;
+    gap:14px;
+    margin-bottom:36px;
+    flex-wrap:wrap;
+}
+
+.day-tab{
+    padding:12px 20px;
+    border-radius:12px;
+    border:1px solid var(--border);
+    background:transparent;
+    font-size:14px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.day-tab:hover{
+    background:#ece6df;
+}
+
+.day-tab.active{
+    background:var(--dark);
+    color:white;
+    border-color:var(--dark);
+}
+
+/* PANELS */
+
+.day-panel{
+    display:none;
+}
+
+.day-panel.active{
+    display:block;
+}
+
+.day-panel h3{
+    font-family:'Playfair Display', serif;
+    font-size:34px;
+    margin-bottom:28px;
+}
+
+.empty-message{
+    height:380px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:16px;
+    text-align:center;
+}
+
+.empty-message p{
+    font-family:'Playfair Display', serif;
+    font-size:38px;
+    font-weight:600;
+}
+
+.empty-message a{
+    text-decoration:none;
+    color:var(--accent);
+
+    font-weight:500;
+}
+
+.itin-event{
+    display:flex;
+    gap:24px;
+
+    margin-bottom:22px;
+}
+
+.itin-time{
+    width:80px;
+    color:var(--muted);
+    font-size:14px;
+    padding-top:18px;
+}
+
+.itin-card{
+    flex:1;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:22px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.03);
+}
+
+.event-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:12px;
+}
+
+.itin-type{
+    color:var(--accent);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.itin-name{
+    font-family:'Playfair Display', serif;
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.itin-note{
+    color:var(--muted);
+    line-height:1.6;
+}
+
+.remove-btn{
+    border:none;
+    background:none;
+    color:#c0392b;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.4);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+.modal-box{
+    width:420px;
+    background:var(--card);
+    border-radius:22px;
+    padding:34px;
+    border:1px solid var(--border);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.modal-box h2{
+    font-family:'Playfair Display', serif;
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.modal-box label{
+    color:var(--muted);
+    font-size:14px;
+}
+
+.modal-box input{
+    padding:13px 14px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    font-size:14px;
+}
+
+.modal-box input:focus{
+    outline:none;
+    border-color:var(--accent);
+}
+
+.modal-buttons{
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+    margin-top:16px;
+}
+
+.itin-card:hover{
+    transform:translateY(-2px);
+    transition:0.2s;
+}
+
+.day-tab,
+.export,
+.addevent{
+    transition:0.2s ease;
+}
+
+/* ---------- ITINERARY DARK MODE ---------- */
+
+body.dark-mode{
+    background:#172033 !important;
+    color:white !important;
+}
+
+body.dark-mode .main,
+body.dark-mode .container{
+    background:#172033 !important;
+}
+
+body.dark-mode form,
+body.dark-mode .itin-card,
+body.dark-mode .modal-box{
+    background:#f4efe8 !important;
+    color:#111827 !important;
+}
+
+body.dark-mode .heading,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3{
+    color:white !important;
+}
+
+body.dark-mode input{
+    background:#0f172a !important;
+    color:white !important;
+    border:1px solid #334155 !important;
+}
+
+body.dark-mode .day-tab{
+    background:#334155 !important;
+    color:white !important;
+}
+
+body.dark-mode .day-tab.active{
+    background:#f59e0b !important;
+}
+
+body.dark-mode .empty-message p{
+    color:white !important;
+}

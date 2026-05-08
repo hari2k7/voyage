@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="splash.css">
+</head>
+<body>
+    <script src="splash.js"></script>
+    <div class="main" id="main">
+        <div class="head">
+            <div class="head1">
+                <div class="heading" id="heading">Itinerary</div><br>
+                <div class="date_dest" id="date_dest">From & To · Startdate - Enddate</div>
+            </div>
+            <div class="head2">
+                <button class="export" onclick="newTrip()">New Trip</button>
+                <button class="addevent" onclick="showAddEvent()">+Add event</button>
+            </div>
+        </div>
+        <br>
+
+        <div class="day-tabs"></div>
+
+        <div id="day_container"></div>
+
+        <div id="modal-overlay" class="modal-overlay">
+
+            <div class="modal-box">
+
+                <h2>Add New Event</h2>
+
+                <label>Event Name</label>
+                <input id="input-name" type="text" placeholder="Enter event name">
+
+                <label>Time</label>
+                <input id="input-time" type="time">
+
+                <label>Note</label>
+                <input id="input-note" type="text" placeholder="Optional note">
+
+                <div class="modal-buttons">
+                    <button onclick="closeModal()" class="export">Cancel</button>
+                    <button onclick="addEvent()" class="addevent">Add Event</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

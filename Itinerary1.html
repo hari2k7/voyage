@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="splash.css">
+</head>
+<body>
+    <script src="splash.js"></script>
+    <div class="container">
+        <form id="form" action="Itinerary2.html" autocomplete="off">
+            <h1>Welcome to Itinerary</h1>
+            
+
+            <label>Enter name: </label><br>
+            <input type="text" id="name" oninput="name_check()">
+            <div id="name_div" class="error"></div><br>
+
+            <label>Enter Duration of trip in days: </label>
+            <input type="number" id="dur" oninput="dur_check()">
+            <div id="dur_div" class="error"></div><br>
+
+            <label>Enter number of travellers: </label>
+            <input type="number" id="travNum" oninput="travNum_check()">
+            <div id="travNum_div" class="error"></div><br>
+
+            <label>Enter Starting point: </label><br>
+            <input type="text" id="start" oninput="start_check()">
+            <div id="start_div" class="error"></div><br>
+
+            <label>Enter Destination: </label><br>
+            <input type="text" id="dest" oninput="dest_check()">
+            <div id="dest_div" class="error"></div><br>
+
+            <label>Enter Start Date: </label><br>
+            <input type="date" id="startDate" oninput="startDate_check()">
+            <div id="startDate_div" class="error"></div><br>
+
+            <label>Enter End Date: </label><br>
+            <input type="date" id="endDate" oninput="endDate_check()">
+            <div id="endDate_div" class="error"></div><br>
+
+
+            <input type="submit">
+        </form>
+        
+    </div>
+</body>
+</html>

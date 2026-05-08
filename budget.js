@@ -1,3 +1,7 @@
+if(localStorage.getItem("voyage_theme") === "dark"){
+    document.body.classList.add("dark-mode");
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const budgetInput = document.getElementById("btv");
     const budgetBtn = document.getElementById("upBudget");
@@ -8,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const expenseAmountInput = document.getElementById("expense-amount");
     const expenseCatInput = document.getElementById('expense-cat');
     const expenseList = document.getElementById('expense-list');
-    const editBudgetBtn = document.getElementById('edit-budget-btn');
+    //const editBudgetBtn = document.getElementById('edit-budget-btn');
     const resetBtn = document.getElementById('reset-btn');
 
     let BUDGET = JSON.parse(localStorage.getItem('voyage_budget')) || 0;
@@ -17,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         budgetBtn.classList.add('hidden');
         budgetInput.classList.add('hidden');
         amtDisp.textContent = '₹' + BUDGET;
-        editBudgetBtn.classList.remove('hidden');
+        //editBudgetBtn.classList.remove('hidden');
     }
 
     let expenses = JSON.parse(localStorage.getItem('voyage_expenses')) || [];
@@ -37,11 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
             budgetInput.classList.add("hidden");
             amtDisp.textContent = `₹${BUDGET}`;
             remVal.textContent = `₹${BUDGET}`;
-            editBudgetBtn.classList.remove('hidden');
+            //editBudgetBtn.classList.remove('hidden');
             updateTotal();
         }
     })
-
+    /*
     editBudgetBtn.addEventListener('click', () => {
         BUDGET = 0;
         localStorage.removeItem('voyage_budget');
@@ -52,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         amtDisp.textContent = '';
         updateTotal();
     });
-
+    */
     expenseForm.addEventListener("submit", (event) => {
         event.preventDefault();
         const expName = expenseNameInput.value.trim();
@@ -85,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             saveExp();
             updateTotal();
             renderList();
+            expenseForm.reset();
         }
     })
 
@@ -150,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         budgetBtn.classList.remove('hidden');
         budgetInput.classList.remove('hidden');
-        editBudgetBtn.classList.add('hidden');
+        //editBudgetBtn.classList.add('hidden');
         budgetInput.value = '';
         amtDisp.textContent = '';
 

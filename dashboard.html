@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voyage — Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style1.css" />
+  <link rel="icon" href="assets/logo.jpeg">
+  <link rel="stylesheet" href="splash.css">
+</head>
+
+<body>
+  <script src="splash.js"></script>
+  <div class="main">
+    <div class="topbar">
+      <div>
+        <div class="page-title">My Trips</div>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn" id="open-modal-btn">+ New Trip</button>
+      </div>
+    </div>
+
+    <div class="trip-hero">
+      <div class="trip-hero-label">Plan journeys, manage budgets, and organize your travel life beautifully.</div>
+      <div class="trip-hero-name" id="hero-name">Adventure Awaits</div>
+      <div class="trip-hero-meta" id="hero-meta">Add your first trip using the button above</div>
+      <div class="trip-hero-tags" id="hero-tags"></div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Total Trips</div>
+        <div style="display: flex; gap: 2em;">
+          <div>
+            <div class="stat-val" id="stat-total">0</div>
+            <div class="stat-unit">planned</div>
+          </div>
+          <div>
+            <div class="stat-val" id="stat-total2">0</div>
+            <div class="stat-unit">completed</div>
+          </div>
+          <div>
+            <div class="stat-val" id="stat-total3">0</div>
+            <div class="stat-unit">upcomming</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-label">Budget Used</div>
+        <div class="stat-val" id="stat-budget">₹0</div>
+        <div class="stat-unit">spent so far</div>
+      </div>
+      
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title">Upcoming Events
+          <div id="upcoming-events"></div>
+        </div>
+        
+      </div>
+      <div class="card">
+        <div class="card-title">All Trips</div>
+        <ul id="trip-list" style="list-style:none;padding:0;margin:0;"></ul>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <h2>Add New Trip</h2>
+      <form id="trip-form">
+        <div class="form-group">
+          <label>Destination</label>
+          <input type="text" id="trip-dest" placeholder="e.g. Kyoto & Tokyo, Japan" required />
+        </div>
+        <div class="form-group">
+          <label>Dates</label>
+          <div style="display:flex; gap:10px;">
+            <input type="date" id="trip-date-from" required />
+            <input type="date" id="trip-date-to" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Status</label>
+          <select id="trip-status">
+            <option value="planned">Planned</option>
+            <option value="upcoming">Upcoming / Booked</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-ghost" id="close-modal-btn">Cancel</button>
+          <button type="submit" class="btn">Save Trip</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+
+</html>

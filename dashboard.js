@@ -1,3 +1,7 @@
+if(localStorage.getItem("voyage_theme") === "dark"){
+    document.body.classList.add("dark-mode");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const openModalBtn = document.getElementById('open-modal-btn');
     const closeModalBtn = document.getElementById('close-modal-btn');
@@ -55,6 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
     function renderList() {
         tripList.innerHTML = '';
 
+        document.getElementById('stat-total').textContent = trips.filter(trip => trip.status === 'planned').length;
+        document.getElementById('stat-total2').textContent = trips.filter(trip => trip.status === 'completed').length;
+        document.getElementById('stat-total3').textContent = trips.filter(trip => trip.status === 'upcoming').length;
+
         for (let i = 0; i < trips.length; i++) {
             const trip = trips[i];
 
@@ -108,5 +116,58 @@ document.addEventListener("DOMContentLoaded", () => {
         total += expenses[i].amount;
     }
     document.getElementById('stat-budget').textContent = '₹' + Math.round(total).toLocaleString();
+
+    // Adithya
+    const upcomingContainer = document.getElementById('upcoming-events');
+    const storedEvents = JSON.parse(localStorage.getItem('events')) || {};
+    let firstDay = null;
+
+    for(let i=1; i<=20; i++){
+
+        if(
+            storedEvents[`day${i}`] &&
+            storedEvents[`day${i}`].length > 0
+        ){
+            firstDay = `day${i}`;
+            break;
+        }
+
+    }
+
+    if(firstDay){
+
+        const events = storedEvents[firstDay];
+
+        events.forEach(event => {
+            
+            const item = document.createElement('div');
+            item.className = "timeline-item";
+
+            item.innerHTML = `
+                <div class="tl-dot"></div>
+
+                <div>
+
+                    <div class="tl-day">
+                        ${firstDay.replace("day","Day ")}
+                    </div>
+
+                    <div class="tl-title">
+                        ${event.name}
+                    </div>
+
+                </div>
+            `;
+
+            upcomingContainer.appendChild(item);
+
+        });
+
+    }else{
+
+        upcomingContainer.innerHTML = `
+            <p>No upcoming events yet.</p>
+        `;
+    }
 
 })
